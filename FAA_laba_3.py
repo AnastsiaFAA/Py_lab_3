@@ -7,12 +7,12 @@ import requests
 
 def main():
     PageHTML = requests.get("https://pikabu.ru/").text
-    Soup = BeautifulSoup(PageHTML, "html.parser")
+    Soup = BeautifulSoup(PageHTML, "html.parser") #док. как влож.стр-ра данных
 
     for i in Soup.find_all("div", "story__main"):   # ищет новости
 
-        print("\n\t\t\t***\n")   # чтобы новости печатались отдельно
-        # print(i)
+        print("\n\t\t\t***\n")   
+        
         tagos = []
 
         for titles in i.find_all("a", "story__title-link "):   # заголовог
